@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Light theme variables */
+  --toast-bg: #ffffff;
+  --toast-color: #1f2937;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-color: rgba(229, 231, 235, 1);
+  
+  /* Animation variables */
+  --animation-speed: 0.3s;
+  --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+  /* Dark theme variables */
+  --toast-bg: #1f2937;
+  --toast-color: #f9fafb;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --border-color: rgba(75, 85, 99, 1);
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(156 163 175) rgb(243 244 246);
+}
+
+.dark * {
+  scrollbar-color: rgb(75 85 99) rgb(31 41 55);
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
+}
+
+/* Custom component styles */
+@layer components {
+  .crypto-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg dark:shadow-xl transition-all duration-300;
+  }
+  
+  .crypto-card:hover {
+    @apply shadow-xl dark:shadow-2xl transform -translate-y-1;
+  }
+  
+  .crypto-input {
+    @apply w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg 
+           text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400
+           focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-200;
+  }
+  
+  .crypto-button {
+    @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg
+           transition-all duration-200 transform hover:scale-105 active:scale-95
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+  
+  .crypto-button-secondary {
+    @apply px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 
+           text-gray-700 dark:text-gray-200 font-medium rounded-lg
+           transition-all duration-200 transform hover:scale-105 active:scale-95
+           focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+  
+  .crypto-textarea {
+    @apply w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 
+           rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400
+           focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-200 resize-none font-mono text-sm;
+  }
+  
+  .progress-bar {
+    @apply w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-primary-500 to-primary-600 rounded-full 
+           transition-all duration-300 ease-out;
+  }
+}
+
+/* Premium theme styles */
+.theme-gradient {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.theme-gradient .crypto-card {
+  @apply bg-gradient-to-br from-white via-blue-50/50 to-purple-50/50 
+         dark:from-gray-800 dark:via-blue-900/20 dark:to-purple-900/20;
+}
+
+.theme-neon .crypto-card {
+  @apply bg-black/40 border-purple-500/30 backdrop-blur-xl;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+}
+
+.theme-neon .crypto-input,
+.theme-neon .crypto-textarea {
+  @apply bg-black/30 border-purple-500/50 text-purple-100 placeholder-purple-300/50;
+}
+
+.theme-neon .crypto-input:focus,
+.theme-neon .crypto-textarea:focus {
+  @apply ring-purple-500 border-purple-400;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.theme-minimal .crypto-card {
+  @apply shadow-none border-gray-200 dark:border-gray-700;
+}
+
+/* Animation classes */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .animate-pulse-slow {
+    animation: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideDown {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .crypto-card {
+    @apply shadow-none border border-gray-300;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .crypto-card {
+    @apply border-2 border-gray-900 dark:border-white;
+  }
+  
+  .crypto-button {
+    @apply border-2 border-white;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
