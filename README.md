@@ -1,7 +1,7 @@
 # EncryptDecryptMessages
 
-![Build](https://img.shields.io/github/actions/workflow/status/yourusername/encryptdecryptmessages/ci.yml?branch=main)
-![License](https://img.shields.io/github/license/yourusername/encryptdecryptmessages)
+![Build](https://img.shields.io/github/actions/workflow/status/AMREESHAYS/encryptdecryptmessages/ci.yml?branch=main)
+![License](https://img.shields.io/github/license/AMREESHAYS/encryptdecryptmessages)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 
 A modern, production-ready web application for encrypting and decrypting messages using multiple algorithms. Built with React, TypeScript, Vite, and Tailwind CSS, this project demonstrates secure message handling, a clean UI/UX, and extensible architecture for both personal and professional use.
@@ -141,7 +141,7 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ## 📬 Contact
 
-For questions or support, open an issue or contact [yourname@domain.com](mailto:yourname@domain.com).
+For questions or support, open an issue or contact [amreeshag5091@gmail.com](mailto:amreeshag5091@gmail.com).
 
 ---
 
