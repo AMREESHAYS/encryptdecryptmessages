@@ -1,10 +1,18 @@
-# CODE_OF_CONDUCT.md
-# Code of Conduct for the encrypt-decrypt messages project
+# Code of Conduct
 
-All contributors are expected to uphold a welcoming, inclusive, and respectful environment.
+## Our Pledge
 
+We pledge to make participation in our project and community a harassment-free experience for everyone.
+
+## Our Standards
 - Be respectful and considerate.
-- No harassment, discrimination, or inappropriate behavior.
-- Report issues to project maintainers.
+- Do not use sexualized language or imagery.
+- Respect differing viewpoints and experiences.
+- Accept constructive criticism gracefully.
 
-See https://www.contributor-covenant.org/ for more details.
+## Enforcement
+Violations may be reported by opening an issue or contacting the maintainers. All complaints will be reviewed and investigated.
+
+---
+
+Adapted from the [Contributor Covenant](https://www.contributor-covenant.org/).
