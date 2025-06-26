@@ -93,10 +93,16 @@ npm run test
 
 > **Add your screenshots here!**
 >
-> ![App Screenshot 1](./screenshots/screenshot1.png)
-> ![App Screenshot 2](./screenshots/screenshot2.png)
->
-> _Place your screenshots in the `screenshots/` folder at the project root._
+![image](https://github.com/user-attachments/assets/8355cf73-510f-47f7-a26b-13e4980e3ab6)
+---
+
+![image](https://github.com/user-attachments/assets/c18d7782-f92d-4e74-a6d8-7f6da0329589)
+---
+
+![image](https://github.com/user-attachments/assets/215cc547-e224-4e0b-99cd-dc9726a89910)
+
+---
+
 
 ---
 
@@ -138,7 +144,7 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ## 📬 Contact
 
-For questions or support, open an issue or contact [yourname@domain.com](mailto:yourname@domain.com).
+For questions or support, open an issue or contact [amreeshag5091@gmail.com](mailto:amreeshag5091@gmail.com).
 
 ---
 
