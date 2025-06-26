@@ -1,191 +1,107 @@
-# EncryptDecryptMessages
+# Expense Tracker That Yells at You
 
-![Build](https://img.shields.io/github/actions/workflow/status/yourusername/encryptdecryptmessages/ci.yml?branch=main)
-![License](https://img.shields.io/github/license/yourusername/encryptdecryptmessages)
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-
-A modern, production-ready web application for encrypting and decrypting messages using multiple algorithms. Built with React, TypeScript, Vite, and Tailwind CSS, this project demonstrates secure message handling, a clean UI/UX, and extensible architecture for both personal and professional use.
+A modern, user-friendly desktop application for tracking expenses, managing budgets, and visualizing spending habits. Built with Python, Tkinter, and ttkbootstrap for a beautiful, responsive UI. Includes premium features like OCR receipt scanning and customizable settings.
 
 ---
 
-## 🚀 Features
+## Features
 
-- **Multiple Encryption Algorithms**: Supports Base64, Caesar cipher, string reversal, and mock AES (with extensible architecture for more).
-- **Password-Based Encryption**: Secure your messages with a password (AES mode).
-- **Modern UI/UX**: Responsive, accessible, and beautiful interface using Tailwind CSS and custom themes.
-- **Message History**: View, copy, and manage your encrypted/decrypted messages.
-- **Theme Support**: Light and dark mode with smooth transitions.
-- **Progress Feedback**: Visual progress bar for encryption/decryption operations.
-- **Validation**: Password strength feedback and input validation.
-- **Extensible**: Easily add new algorithms or UI features.
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React, TypeScript, Vite
-- **Styling**: Tailwind CSS, PostCSS
-- **State Management**: React Context API
-- **Testing**: Jest, React Testing Library
-- **Tooling**: ESLint, Prettier, Husky, modern VS Code setup
+- **Expense Management**: Add, view, and categorize your expenses with ease.
+- **Budgeting**: Set monthly budgets for each category and get notified if you overspend.
+- **Reports & Analytics**: Visualize your spending by category with interactive pie charts.
+- **Premium UI**: Clean, modern interface with theme and currency selection.
+- **Category Management**: Add or remove categories as you wish.
+- **OCR Receipt Scanning**: Extract text from receipts using built-in OCR (premium feature).
+- **Persistent Settings**: All preferences and categories are saved for future sessions.
 
 ---
 
-## 📦 Getting Started
+## Screenshots
+
+> _Add screenshots of the main window, settings, and reports here._
+
+---
+
+## Getting Started
 
 ### Prerequisites
-- Node.js (v18+ recommended)
-- npm (v9+ recommended)
+- Python 3.8+
+- pip
 
 ### Installation
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/encryptdecryptmessages.git
-cd encryptdecryptmessages
+1. **Clone the repository**
+   ```sh
+   git clone <your-repo-url>
+   cd expense-tracker
+   ```
+2. **Install dependencies**
+   ```sh
+   pip install -r requirements.txt
+   ```
 
-# Install dependencies
-npm install
-```
-
-### Development
-```bash
-# Start the development server
-npm run dev
-```
-Visit [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Production Build
-```bash
-npm run build
-npm run preview
-```
-
-### Testing
-```bash
-npm run test
+### Running the App
+```sh
+python main.py
 ```
 
 ---
 
-## 📂 Project Structure
+## Usage
 
-```
-├── src/
-│   ├── components/         # Reusable UI components
-│   ├── context/            # React Context providers
-│   ├── layouts/            # App layout components
-│   ├── utils/              # Crypto and helper utilities
-│   ├── types/              # TypeScript type definitions
-│   ├── App.tsx             # Main app component
-│   ├── main.tsx            # App entry point
-│   └── index.css           # Tailwind and custom styles
-├── public/                 # Static assets
-├── package.json            # Project metadata and scripts
-├── tailwind.config.js      # Tailwind CSS config
-├── postcss.config.js       # PostCSS config
-├── tsconfig.json           # TypeScript config
-└── README.md               # Project documentation
-```
+- **Expenses Tab**: Add new expenses by entering the date, amount, category, and description. All expenses are listed in a table.
+- **Budgets Tab**: Set a budget for any category. The app will notify you if you exceed your budget.
+- **Reports Tab**: Click "Generate Report" to see a pie chart of your spending by category.
+- **Settings Tab**:
+  - Change currency and theme.
+  - Add or remove categories.
+  - Use the OCR feature to scan receipts and extract text.
 
 ---
 
-## 🖼️ Screenshots
-
-> **Add your screenshots here!**
->
-![image](https://github.com/user-attachments/assets/8355cf73-510f-47f7-a26b-13e4980e3ab6)
----
-
-![image](https://github.com/user-attachments/assets/c18d7782-f92d-4e74-a6d8-7f6da0329589)
----
-
-![image](https://github.com/user-attachments/assets/215cc547-e224-4e0b-99cd-dc9726a89910)
+## Configuration & Data
+- **config.json**: Stores your selected currency and categories.
+- **expenses.db**: SQLite database for all expenses and budgets.
+- **assets/**: Place for icons and images.
 
 ---
 
+## OCR Feature
+- Click "Scan Receipt" in the Settings tab.
+- Select an image file (JPG, PNG, JPEG).
+- Extracted text will be shown in a popup.
 
 ---
 
-## ⚠️ Problems Faced & Solutions
-
-### 1. **TypeScript & ESLint Errors**
-- **Problem:** Type mismatches, missing types, and incorrect context usage caused build failures.
-- **Solution:** Refactored all files for strict typing, fixed all context providers/consumers, and updated type definitions.
-
-### 2. **Tailwind CSS Integration**
-- **Problem:** Custom color classes (e.g., `primary-500`) and `@apply` rules were not recognized due to misconfigured Tailwind setup.
-- **Solution:** Updated `tailwind.config.js` to include a custom `primary` palette and ensured all Tailwind directives were at the top of `index.css`.
-
-### 3. **Vite/PostCSS Build Errors**
-- **Problem:** `@import` statements for Google Fonts were placed after Tailwind directives, causing build errors.
-- **Solution:** Moved all `@import` statements to the very top of the CSS file as required by Vite/PostCSS.
-
-### 4. **Context & Import Path Issues**
-- **Problem:** Incorrect or outdated import paths and context property usage led to runtime errors.
-- **Solution:** Audited and fixed all import paths and context usages to match the actual file structure and exported properties.
-
-### 5. **Mock Crypto Implementation**
-- **Problem:** For demo purposes, real cryptography was not implemented, but the architecture needed to be extensible and safe for future upgrades.
-- **Solution:** Stubbed and strongly typed all crypto utility functions, with clear comments for future replacement with real crypto libraries.
+## Customization
+- **Themes**: Choose between auto, light, or dark mode in Settings.
+- **Categories**: Add or remove categories as needed. All changes are saved.
+- **Currency**: Select your preferred currency symbol.
 
 ---
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) before contributing.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+## Troubleshooting
+- If you see a database or SQL error, ensure you are using Python 3.8+ and have the correct permissions.
+- For OCR, make sure you have the required packages installed (see `requirements.txt`).
+- If the UI does not display correctly, try updating `ttkbootstrap` and `tkinter`.
 
 ---
 
-## 📬 Contact
-
-For questions or support, open an issue or contact [amreeshag5091@gmail.com](mailto:amreeshag5091@gmail.com).
-
----
-
-## 🤔 FAQ
-
-**Q: Is this app secure for real-world sensitive data?**
-> This project uses mock/stubbed crypto for demonstration. For production, integrate a real cryptography library and audit all security aspects.
-
-**Q: How do I add a new encryption algorithm?**
-> Add your algorithm to `src/utils/Cryptoutils.tsx` and update the UI in the forms/components as needed.
-
-**Q: Why do I see Tailwind or PostCSS errors?**
-> Ensure all `@import` statements are at the top of your CSS and that your Tailwind config matches the docs.
-
-**Q: How do I run tests?**
-> Use `npm run test` to run all unit and integration tests.
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
-## 🗺️ Roadmap
-
-- [ ] Replace mock crypto with real, audited cryptography
-- [ ] Add user authentication and message sharing
-- [ ] Export/import message history
-- [ ] Add i18n (internationalization) support
-- [ ] PWA support for offline use
-- [ ] More encryption algorithms (RSA, ChaCha20, etc.)
-- [ ] Accessibility improvements
+## License
+This project is licensed under the MIT License.
 
 ---
 
-## 🙏 Acknowledgements
-
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Jest](https://jestjs.io/)
-- [Contributor Covenant](https://www.contributor-covenant.org/)
+## Credits
+- [ttkbootstrap](https://github.com/israel-dryer/ttkbootstrap)
+- [pandas](https://pandas.pydata.org/)
+- [matplotlib](https://matplotlib.org/)
+- [pytesseract](https://github.com/madmaze/pytesseract) (for OCR)
 
 ---
 
-_This project was built as a demonstration of modern React, TypeScript, and Tailwind CSS best practices._
-
+Enjoy tracking your expenses with a little extra motivation!
